@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Single-series chart hue (light / dark steps of the same blue). */
+@theme {
+    --color-chart: #2a78d6;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-chart: #3987e5;
+    }
+}
+
+body {
+    @apply bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}

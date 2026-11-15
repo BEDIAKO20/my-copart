@@ -1,0 +1,44 @@
+{
+    "name": "my-copart",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "This is an example of a Crawlee project.",
+    "dependencies": {
+        "@prisma/adapter-pg": "^7.10.0",
+        "@prisma/client": "^7.10.0",
+        "crawlee": "^3.0.0",
+        "dotenv": "^17.4.2",
+        "pg": "^8.23.0",
+        "playwright": "*"
+    },
+    "devDependencies": {
+        "@apify/tsconfig": "^0.1.0",
+        "@types/node": "^24.0.0",
+        "@types/pg": "^8.23.1",
+        "prisma": "^7.10.0",
+        "tsx": "^4.4.0",
+        "typescript": "~5.9.0"
+    },
+    "scripts": {
+        "start": "npm run start:dev",
+        "start:prod": "node dist/main.js",
+        "start:dev": "tsx src/main.ts",
+        "build": "prisma generate && tsc",
+        "postinstall": "prisma generate",
+        "db:migrate": "prisma migrate dev",
+        "db:deploy": "prisma migrate deploy",
+        "db:generate": "prisma generate",
+        "db:studio": "prisma studio",
+        "db:import": "tsx src/db/import.ts",
+        "db:check": "tsx src/db/check.ts",
+        "db:archive": "tsx src/db/archive.ts",
+        "db:archive:setup": "tsx src/db/archive-setup.ts",
+        "api": "tsx watch src/server.ts",
+        "dashboard": "npm --prefix dashboard run dev",
+        "dashboard:install": "cd dashboard && npm install",
+        "dashboard:build": "npm --prefix dashboard run build",
+        "test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
+    },
+    "author": "It's not you it's me",
+    "license": "ISC"
+}
